@@ -54,7 +54,7 @@ jobs:
     env:
       MONGO_URI: 'mongodb+srv://supercluster.d3jj.mongodb.net/superData'
       MONGO_USERNAME: ahmed
-      KUBECONFIG: ./kubernetes/ifconfig.yaml
+      KUBECONFIG: ./kubernetes/iticonfig.yaml
       NAMESPACE: MostafaKassab
      
     steps:
@@ -69,7 +69,7 @@ jobs:
     - name: Set up Kubeconfig
       run: kubectl get nodes
       env:
-        KUBECONFIG: ./kubernetes/ifconfig.yaml
+        KUBECONFIG: ./kubernetes/iticonfig.yaml
 
     - name: Fetch Kubernetes Cluster Details
       run: |
@@ -106,7 +106,7 @@ jobs:
             -o yaml | kubectl apply -f -
       
       env:
-        KUBECONFIG: ./kubernetes/ifconfig.yaml
+        KUBECONFIG: ./kubernetes/iticonfig.yaml
 
 
 
