@@ -36,7 +36,7 @@ jobs:
   
 
     - name: Docker Build
-      run: docker build -t ${{ vars.DOCKERHUB_USERNAME }}/solar-system-mostafakassab:${{ github.sha }} .
+      run: docker build -t ${{ vars.CONTAINER_REGISTERY }}/${{ vars.DOCKERHUB_USERNAME }}/solar-system-mostafakassab:${{ github.sha }} .
 
     - name: Docker Login
       run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login ${{ vars.CONTAINER_REGISTERY }} -u ${{ vars.DOCKERHUB_USERNAME }} --password-stdin
@@ -88,7 +88,7 @@ jobs:
       env:
             NAMESPACE: MostafaKassab
             REPLICAS: 2
-            IMAGE: ${{ vars.DOCKERHUB_USERNAME }}/solar-system-mostafakassab:${{ github.sha }}
+            IMAGE: ${{ vars.CONTAINER_REGISTERY }}/${{ vars.DOCKERHUB_USERNAME }}/solar-system-mostafakassab:${{ github.sha }}
 
 
     - name: Show processed manifests
