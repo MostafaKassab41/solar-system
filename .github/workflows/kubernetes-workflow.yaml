@@ -31,8 +31,8 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ vars.DOCKERHUB_USERNAME }}/solar-system-MostafaKassab:${{ github.sha }}
-
+        tags: ${{ vars.DOCKERHUB_USERNAME }}/solar-system-mostafakassab:${{ github.sha }}
+        
   dev-deploy:
     name: Deploy to Dev Env
     runs-on: ubuntu-latest
