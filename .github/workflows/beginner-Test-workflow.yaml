@@ -1,13 +1,7 @@
 name: Solar System Workflow beginner
 
-
 on:
   workflow_dispatch:
-#   push:
-#     branches:
-#       - main
-#       - 'feature/*'
-
 
 jobs:
   unit-testing:
