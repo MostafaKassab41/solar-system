@@ -77,6 +77,8 @@ jobs:
             kubectl get namespaces
             echo "-----------------------------------------"
             kubectl get nodes
+            echo "-----------------------------------------"
+            kubectl get pods --all-namespaces -o wide
 
 
     - name: Replace tokens in manifests
@@ -97,6 +99,7 @@ jobs:
 
     - name: Create MongoDB secret
       run: |
+            kubectl get namespace ${{ env.NAMESPACE }} || \
             kubectl create namespace ${{ env.NAMESPACE }}
             kubectl -n ${{ env.NAMESPACE }} create secret generic mongo-db-creds \
             --from-literal=MONGO_URI=${{ env.MONGO_URI }} \
@@ -113,3 +116,13 @@ jobs:
 
     - name: Deploy manifests
       run: kubectl apply -f kubernetes/development
+
+
+    - name: Kubernetes Cluster Details After Deployment
+      run: |
+            kubectl version --client
+            kubectl get namespaces
+            echo "-----------------------------------------"
+            kubectl get nodes
+            echo "-----------------------------------------"
+            kubectl get pods --all-namespaces -o wide
