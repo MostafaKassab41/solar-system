@@ -120,9 +120,16 @@ jobs:
 
     - name: Kubernetes Cluster Details After Deployment
       run: |
+            sleep 30
             kubectl version --client
             kubectl get namespaces
             echo "-----------------------------------------"
             kubectl get nodes
             echo "-----------------------------------------"
             kubectl get pods --all-namespaces -o wide
+            echo "-----------------------------------------"
+            kubectl get services --all-namespaces
+            echo "-----------------------------------------"
+            kubectl get svc --namespace ${{ env.NAMESPACE }}
+            echo "-----------------------------------------\n"-----------------------------------------""
+            echo "Your Application is accessible at - http://$(kubectl get svc --namespace ${{ env.NAMESPACE }} | grep solar-system-kassab | awk '{ print $4 }'):3002"

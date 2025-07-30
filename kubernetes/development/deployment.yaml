@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: solar-system
+    namespace: _{_NAMESPACE_}_
   name: solar-system
   namespace: _{_NAMESPACE_}_
 spec:
@@ -21,7 +22,7 @@ spec:
         imagePullPolicy: Always
         name: solar-system
         ports:
-        - containerPort: 3000
+        - containerPort: 3002
           name: http
           protocol: TCP
         envFrom:

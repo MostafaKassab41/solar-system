@@ -3,13 +3,15 @@ kind: Service
 metadata:
   labels:
     app: solar-system
-  name: solar-system
+    namespace: _{_NAMESPACE_}_
+  name: solar-system-kassab
   namespace: _{_NAMESPACE_}_
 spec:
   ports:
   - port: 80
     protocol: TCP
-    targetPort: 3000
+    targetPort: 3002
   selector:
-    app: solar-system 
+    app: solar-system
+    namespace: _{_NAMESPACE_}_
   type: LoadBalancer
