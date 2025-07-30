@@ -42,7 +42,7 @@ jobs:
       run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login ${{ vars.CONTAINER_REGISTERY }} -u ${{ vars.DOCKERHUB_USERNAME }} --password-stdin
 
     - name: Docker Push
-      run: docker push ${{ vars.DOCKERHUB_USERNAME }}/solar-system-mostafakassab:${{ github.sha }}
+      run: docker push ${{ vars.CONTAINER_REGISTERY }}/${{ vars.DOCKERHUB_USERNAME }}/solar-system-mostafakassab:${{ github.sha }}
 
 
         
