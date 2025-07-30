@@ -75,7 +75,7 @@ jobs:
       env:
             NAMESPACE: MostafaKassab
             REPLICAS: 2
-            IMAGE: ${{ vars.DOCKERHUB_USERNAME }}/solar-system-MostafaKassab:${{ github.sha }}
+            IMAGE: ${{ vars.DOCKERHUB_USERNAME }}/solar-system-mostafakassab:${{ github.sha }}
 
 
     - name: Show processed manifests
