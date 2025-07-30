@@ -64,7 +64,7 @@ jobs:
     - name: Install kubectl CLI
       uses: azure/setup-kubectl@v3
       with:
-            version: '1.26.0'
+            version: 'latest'
 
     - name: Set up Kubeconfig
       run: kubectl get nodes
