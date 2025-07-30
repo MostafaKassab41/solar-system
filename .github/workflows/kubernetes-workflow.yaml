@@ -55,7 +55,7 @@ jobs:
       MONGO_URI: 'mongodb+srv://supercluster.d3jj.mongodb.net/superData'
       MONGO_USERNAME: ahmed
       KUBECONFIG: ./kubernetes/iticonfig.yaml
-      NAMESPACE: MostafaKassab
+      NAMESPACE: mostafakassab
      
     steps:
     - name: Checkout repository
@@ -86,7 +86,7 @@ jobs:
         tokenSuffix: '_}_'
         files: kubernetes/development/*.yaml
       env:
-            NAMESPACE: MostafaKassab
+            NAMESPACE: mostafakassab
             REPLICAS: 2
             IMAGE: ${{ vars.CONTAINER_REGISTERY }}/${{ vars.DOCKERHUB_USERNAME }}/solar-system-mostafakassab:${{ github.sha }}
 
